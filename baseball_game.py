@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 
+import sys
 import random
 
 
@@ -260,8 +261,7 @@ def is_no(one_more_input):
     return result
 
 
-def main():
-    print("Play Baseball")
+def main2():
     random_number = str(get_not_duplicated_three_digit_number())
     print("Random Number is : ", random_number)
     # ===Modify codes below=============
@@ -272,7 +272,10 @@ def main():
         while True:
             user_input = input("Input guess number : ")
             if user_input == "0":
-                return 0
+                print("Thank you for using this program")
+                print("End of the Game")
+
+                sys.exit(0)
             if is_validated_number(user_input):
                 break
             else:
@@ -282,16 +285,58 @@ def main():
         if strikes == 3:
             while True:
                 one_more = input("You win, one more(Y/N)?")
-                if is_yes(one_more):
+                if one_more == "0":
+                    print("Thank you for using this program")
+                    print("End of the Game")
+
+                    sys.exit(0)
+                elif is_yes(one_more):
                     main()
                 elif is_no(one_more):
                     print("Thank you for using this program")
                     print("End of the Game")
 
-                    return 0
+                    sys.exit(0)
                 else:
                     print("Wrong Input, Input again")
 
 
+def main():
+    print("Play Baseball")
+    stop = False
+    # ==================================
+    while True and not stop:
+        random_number = str(get_not_duplicated_three_digit_number())
+        print("Random Number is : ", random_number)
+        while True and not stop:
+            while True:
+                user_input = input("Input guess number : ")
+                if user_input == "0":
+                    stop = True
+                    break
+                if is_validated_number(user_input):
+                    break
+                else:
+                    print("Wrong Input, Input again")
+            strikes, balls = get_strikes_or_ball(user_input, random_number)
+            print(f"Strikes : {strikes}, Balls : {balls}")
+            if strikes == 3:
+                break
+        while True:
+            one_more = input("You win, one more(Y/N)?")
+            if one_more == "0":
+                stop = True
+                break
+            if is_yes(one_more) or is_no(one_more):
+                break
+            else:
+                print("Wrong Input, Input again")
+        if is_no(one_more):
+            break
+    # ==================================
+    print("Thank you for using this program")
+    print("End of the Game")
+
+
 if __name__ == "__main__":
-    print(get_not_duplicated_three_digit_number())
+    main()
