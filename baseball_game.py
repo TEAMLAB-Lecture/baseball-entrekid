@@ -88,7 +88,7 @@ def is_duplicated_number(three_digit):
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
 
-    result = True if len(set(list(three_digit))) != 3 else False
+    result = True if len(set(list(str(three_digit)))) != 3 else False
     # ==================================
     return result
 
@@ -293,4 +293,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    print(get_not_duplicated_three_digit_number())
