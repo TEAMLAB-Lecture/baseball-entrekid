@@ -270,6 +270,8 @@ def main():
     while True:
         while True:
             user_input = input("Input guess number : ")
+            if user_input == "0":
+                return 0
             if is_validated_number(user_input):
                 break
             else:
