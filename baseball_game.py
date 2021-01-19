@@ -324,7 +324,7 @@ def main():
             if not stop and strikes == 3:
                 break
         while True and not stop:
-            one_more = input("You win, one more(Y/N)?")
+            one_more = input("You win, one more(Y/N) ?")
             if one_more == "0":
                 stop = True
                 break
