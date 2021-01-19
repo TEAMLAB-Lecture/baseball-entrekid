@@ -221,8 +221,8 @@ def is_yes(one_more_input):
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
 
-    result = True if one_more_input == "Y" \
-        or one_more_input == "YES" else False
+    result = True if one_more_input.upper() == "Y" \
+        or one_more_input.upper() == "YES" else False
     # ==================================
     return result
 
@@ -254,7 +254,8 @@ def is_no(one_more_input):
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
 
-    result = True if one_more_input == "N" or one_more_input == "NO" else False
+    result = True if one_more_input.upper(
+    ) == "N" or one_more_input.upper() == "NO" else False
     # ==================================
     return result
 
