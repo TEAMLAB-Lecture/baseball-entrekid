@@ -32,7 +32,7 @@ def is_digit(user_input_number):
     # ===Modify codes below=============
     # 조건에 따라 변환되어야 할 결과를 result 변수에 할당
 
-    result = user_input_number.isdigit()
+    result = str(user_input_number).isdigit()
 
     # ==================================
     return result
