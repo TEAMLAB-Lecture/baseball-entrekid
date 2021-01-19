@@ -318,11 +318,12 @@ def main():
                     break
                 else:
                     print("Wrong Input, Input again")
-            strikes, balls = get_strikes_or_ball(user_input, random_number)
-            print(f"Strikes : {strikes}, Balls : {balls}")
-            if strikes == 3:
+            if not stop:
+                strikes, balls = get_strikes_or_ball(user_input, random_number)
+                print(f"Strikes : {strikes}, Balls : {balls}")
+            if not stop and strikes == 3:
                 break
-        while True:
+        while True and not stop:
             one_more = input("You win, one more(Y/N)?")
             if one_more == "0":
                 stop = True
@@ -331,7 +332,7 @@ def main():
                 break
             else:
                 print("Wrong Input, Input again")
-        if is_no(one_more):
+        if not stop and is_no(one_more):
             break
     # ==================================
     print("Thank you for using this program")
