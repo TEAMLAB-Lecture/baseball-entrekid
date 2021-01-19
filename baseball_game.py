@@ -120,7 +120,7 @@ def is_validated_number(user_input_number):
         True
         if is_digit(user_input_number)
         and is_between_100_and_999(user_input_number)
-        and is_duplicated_number(user_input_number)
+        and not is_duplicated_number(user_input_number)
         else False
     )
     # ==================================
